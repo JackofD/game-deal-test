@@ -1,5 +1,3 @@
-import { TGameCard } from "./types/GameTypes";
-
 const baseDealApiUrl = 'https://www.cheapshark.com/api/1.0/deals';
 
 export const getDeals = async () => {

@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { TGameCard } from '../types/GameTypes';
+import Button from './shared/Button';
 
 type GameCardProps = {
   className?: string;
@@ -24,7 +25,7 @@ const GameCard: FC<GameCardProps> = (props) => {
           }
         </section>
       </section>
-      <button className="inline-block px-4 py-2 border border-black rounded-md">View more</button>
+      <Button text="View more" click={() => {}} />
     </div>
   );
 };

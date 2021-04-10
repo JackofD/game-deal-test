@@ -1,9 +1,6 @@
-import { FC, useState, useEffect } from 'react';
 import MainLayout from '../components/MainLayout';
 
 const StoreList = () => {
-
-
 
   return (
     <MainLayout>

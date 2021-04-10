@@ -31779,7 +31779,8 @@ video {
 /* custom css */
 
 .custom-checkbox {
-  padding: 10px 10px;
+  width: 24px;
+  height: 24px;
   border-radius: 4px;
 }
 

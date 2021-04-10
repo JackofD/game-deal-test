@@ -12,6 +12,7 @@ const DealList = () => {
   const [gameList, setGameList] = useState<TGameCard[]>();
   const [filteredList, setFilteredList] = useState<TGameCard[]>();
   const [searchValue, setSearchValue] = useState('');
+  const [saleFilter, setSaleFilter] = useState(false);
 
     useEffect(() => {
       getDeals()
@@ -26,6 +27,15 @@ const DealList = () => {
       setFilteredList(searchList);
     };
 
+    useEffect(() => {
+      if(saleFilter) {
+        const onSaleFilter = filteredList?.filter((game) => game.isOnSale);
+        setFilteredList(onSaleFilter);
+      } else {
+        setFilteredList(gameList?.filter(game => game.title.toLowerCase().includes(searchValue.toLowerCase())));
+      }
+    }, [saleFilter]);
+
 
   return (
     <MainLayout>
@@ -38,7 +48,7 @@ const DealList = () => {
         </section>
         <section className="py-4 mb-8 border-0 border-transparent border-b border-gray-200">
           <Accordion headerText="Filter">
-            <Checkbox labelText="On Sale" />
+            <Checkbox className="mt-4" labelText="On Sale" change={(val) => setSaleFilter(val)} />
           </Accordion>
         </section>
         <section className="grid gap-8 justify-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3">

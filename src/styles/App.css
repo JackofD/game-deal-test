@@ -31776,6 +31776,29 @@ video {
   --tw-backdrop-sepia: sepia(100%);
 }
 
+/* custom css */
+
+/* listing grid */
+
+.listing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr))
+}
+
+@media (min-width: 768px) {
+  .listing-grid {
+    /* grid-template-columns: 2fr; */
+    -webkit-column-gap: 2rem;
+            column-gap: 2rem;
+  }
+}
+
+@media (min-width: 960px) {
+  .listing-grid {
+    /* grid-template-columns: 3fr; */
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

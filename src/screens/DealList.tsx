@@ -4,7 +4,9 @@ import { TGameCard } from '../types/GameTypes';
 import GameCard from '../components/GameCard';
 import { getDeals } from '../requests';
 import TextInput from '../components/shared/TextInput';
+import Checkbox from '../components/shared/Checkbox';
 import Icon from '../components/shared/Icon';
+import Accordion from '../components/shared/Accordion';
 
 const DealList = () => {
   const [gameList, setGameList] = useState<TGameCard[]>();
@@ -31,12 +33,13 @@ const DealList = () => {
         <section className="flex flex-row justify-between mb-8">
           <h1 className="text-5xl font-semibold">Deals</h1>
           <TextInput className="w-72" placeholder="Search deals by name" value={searchValue} change={(value) => searchFilter(value)}>
-            <Icon name="search" />
+            <Icon name="search" className="text-gray-400" />
           </TextInput>
         </section>
         <section className="py-4 mb-8 border-0 border-transparent border-b border-gray-200">
-          Deal filters
-          {/* an accordion is needed in here */}
+          <Accordion headerText="Filter">
+            <Checkbox labelText="On Sale" />
+          </Accordion>
         </section>
         <section className="grid gap-8 justify-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {

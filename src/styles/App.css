@@ -31778,25 +31778,14 @@ video {
 
 /* custom css */
 
-/* listing grid */
-
-.listing-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr))
+.custom-checkbox {
+  padding: 10px 10px;
+  border-radius: 4px;
 }
 
-@media (min-width: 768px) {
-  .listing-grid {
-    /* grid-template-columns: 2fr; */
-    -webkit-column-gap: 2rem;
-            column-gap: 2rem;
-  }
-}
-
-@media (min-width: 960px) {
-  .listing-grid {
-    /* grid-template-columns: 3fr; */
-  }
+.custom-check {
+  bottom: 4px;
+  left: 2px
 }
 
 @media (min-width: 640px) {

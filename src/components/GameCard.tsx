@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { TGameCard } from '../types/GameTypes';
 import Button from './shared/Button';
+import { useHistory } from "react-router-dom";
 
 type GameCardProps = {
   className?: string;
@@ -8,7 +9,8 @@ type GameCardProps = {
 };
 
 const GameCard: FC<GameCardProps> = (props) => {
-  const { gameData: {title, isOnSale, salePrice, normalPrice}} = props;
+  let history = useHistory();
+  const { gameData: {title, isOnSale, salePrice, normalPrice, id}} = props;
 
   return (
     <div className="flex flex-col min p-4 mb-8 bg-gray-100 rounded-md">
@@ -25,7 +27,7 @@ const GameCard: FC<GameCardProps> = (props) => {
           }
         </section>
       </section>
-      <Button className="w-1/2" text="View more" click={() => {}} />
+      <Button className="w-1/2" text="View more" click={() => history.push(`/DealDetail/${id}`)} />
     </div>
   );
 };

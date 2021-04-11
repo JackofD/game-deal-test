@@ -1,6 +1,7 @@
 import React from 'react';
 import DealList from './screens/DealList';
 import StoreList from './screens/StoreList';
+import DealDetail from './screens/DealDetail';
 import './styles/App.css';
 import {
   BrowserRouter as Router,
@@ -16,6 +17,9 @@ function App() {
         <Switch>
           <Route path="/stores">
             <StoreList />
+          </Route>
+          <Route path="/DealDetail/:id">
+            <DealDetail />
           </Route>
           <Route path="/" exact>
             <DealList />

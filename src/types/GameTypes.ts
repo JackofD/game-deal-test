@@ -8,6 +8,25 @@ export type TGameCard = {
   imageThumb?: string;
 };
 
-export type TDealList = {
-  games: TGameCard[];
-}
+export type TGameDetail = {
+  name: string;
+  gameID: string;
+  storeID: string;
+  salePrice: string;
+  retailPrice: string;
+  imageThumb: string;
+  cheaperStores: TDealStore[];
+};
+
+export type TDealStore = {
+  dealID: string;
+  retailPrice: string;
+  salePrice: string;
+  storeID: string;
+};
+
+export type TStore = {
+  storeID: string;
+  storeName: string;
+  isActive: string;
+};

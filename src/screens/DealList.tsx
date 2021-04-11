@@ -2,11 +2,12 @@ import { useState, useEffect } from 'react';
 import MainLayout from '../components/MainLayout';
 import { TDealGameCard } from '../types/GameTypes';
 import GameCard from '../components/GameCard';
-import { getDeals } from '../requests';
+import { getDeals, getDealsByStore } from '../requests';
 import TextInput from '../components/shared/TextInput';
 import Checkbox from '../components/shared/Checkbox';
 import Icon from '../components/shared/Icon';
 import Accordion from '../components/shared/Accordion';
+import { useParams, useLocation } from 'react-router-dom';
 
 const DealList = () => {
   const [gameList, setGameList] = useState<TDealGameCard[]>();
@@ -14,10 +15,25 @@ const DealList = () => {
   const [searchValue, setSearchValue] = useState('');
   const [saleFilter, setSaleFilter] = useState(false);
 
+  let { id: currentStoreId } = useParams<{ id: string }>();
+  let location = useLocation();
+
     useEffect(() => {
-      getDeals()
-        .then(res => setGameList(res));
-    }, []);
+      if(!currentStoreId) {
+        getDeals()
+          .then(res => setGameList(res));
+
+        console.log('should not', currentStoreId)
+      }
+    }, [location]);
+
+    useEffect(() => {
+      if(currentStoreId) {
+        getDealsByStore(currentStoreId)
+          .then(res => setGameList(res));
+          console.log('should', currentStoreId)
+      }
+    }, [location]);
 
     useEffect(() => setFilteredList(gameList), [gameList]);
 

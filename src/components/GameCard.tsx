@@ -19,11 +19,11 @@ const GameCard: FC<GameCardProps> = (props) => {
         <section className="flex flex-row text-base font-semibold">
           {
             isOnSale && salePrice
-            ? <span className="line-through mr-1">{normalPrice}</span>
-            : <span className="mr-1">{normalPrice}</span>
+            ? <span className="line-through mr-2">${normalPrice}</span>
+            : <span className="mr-1">${normalPrice}</span>
           }
           {
-            isOnSale && <span className="text-green-500">{salePrice}</span>
+            isOnSale && <span className="text-green-500">${salePrice}</span>
           }
         </section>
       </section>

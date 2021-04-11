@@ -1,4 +1,3 @@
-import React from 'react';
 import DealList from './screens/DealList';
 import StoreList from './screens/StoreList';
 import DealDetail from './screens/DealDetail';
@@ -6,8 +5,7 @@ import './styles/App.css';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 function App() {
@@ -20,6 +18,9 @@ function App() {
           </Route>
           <Route path="/DealDetail/:id">
             <DealDetail />
+          </Route>
+          <Route path="/:id" exact>
+            <DealList />
           </Route>
           <Route path="/" exact>
             <DealList />

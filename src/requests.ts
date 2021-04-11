@@ -17,6 +17,23 @@ export const getDeals = async () => {
   });
 };
 
+export const getDealsByStore = async (storeId: string) => {
+  const response = await fetch(baseDealApiUrl + `deals?storeID=${storeId}`);
+  const result = await response.json();
+  
+  return result.map((item: any) => {
+    return {
+      id: item.dealID,
+      gameId: item.gameID,
+      title: item.title,
+      salePrice: item.salePrice,
+      normalPrice: item.normalPrice,
+      isOnSale: item.isOnSale,
+      imageThumb: item.thumb
+    }
+  });
+};
+
 export const getDealDetail = async (id: string) => {
   const response = await fetch(baseDealApiUrl + `deals?id=${id}`);
   const result = await response.json();

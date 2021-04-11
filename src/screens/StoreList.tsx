@@ -5,11 +5,14 @@ import Icon from '../components/shared/Icon';
 import TextInput from '../components/shared/TextInput';
 import { getStores } from '../requests';
 import { TStore } from '../types/GameTypes';
+import { useHistory } from "react-router-dom";
 
 const StoreList = () => {
   const [searchValue, setSearchValue] = useState('');
   const [storeList, setStoreList] = useState<TStore[]>([]);
   const [filteredList, setFilteredList] = useState<TStore[]>([]);
+
+  let history = useHistory();
 
   useEffect(() => {
     getStores()
@@ -31,7 +34,7 @@ const StoreList = () => {
     <MainLayout>
       <div>
         <section className="flex flex-row justify-between mb-8">
-          <h1 className="text-5xl font-semibold">Deals</h1>
+          <h1 className="text-5xl font-semibold">Stores</h1>
           <TextInput className="w-72" placeholder="Search deals by name" value={searchValue} change={(value) => searchFilter(value)}>
             <Icon name="search" className="text-gray-400" />
           </TextInput>
@@ -50,7 +53,7 @@ const StoreList = () => {
                     {/* Deals count left out due to crazy amount of api calls just for vanity */}
                     {/* <div>Store deals</div> */}
                   </section>
-                  <Button className="w-1/2 border-blue-400 text-blue-400 font-semibold" click={() => {}} text="View Deals" />
+                  <Button className="w-1/2 border-blue-400 text-blue-400 font-semibold" click={() => history.push(`/${store.storeID}`)} text="View Deals" />
                 </div>
               );
             })

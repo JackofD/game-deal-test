@@ -1,4 +1,4 @@
-export type TGameCard = {
+export type TDealGameCard = {
   id: string;
   gameId: string;
   title: string;

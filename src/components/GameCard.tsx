@@ -1,11 +1,11 @@
 import { FC } from 'react';
-import { TGameCard } from '../types/GameTypes';
+import { TDealGameCard } from '../types/GameTypes';
 import Button from './shared/Button';
 import { useHistory } from "react-router-dom";
 
 type GameCardProps = {
   className?: string;
-  gameData: TGameCard;
+  gameData: TDealGameCard;
 };
 
 const GameCard: FC<GameCardProps> = (props) => {

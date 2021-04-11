@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import MainLayout from '../components/MainLayout';
-import { TGameCard } from '../types/GameTypes';
+import { TDealGameCard } from '../types/GameTypes';
 import GameCard from '../components/GameCard';
 import { getDeals } from '../requests';
 import TextInput from '../components/shared/TextInput';
@@ -9,8 +9,8 @@ import Icon from '../components/shared/Icon';
 import Accordion from '../components/shared/Accordion';
 
 const DealList = () => {
-  const [gameList, setGameList] = useState<TGameCard[]>();
-  const [filteredList, setFilteredList] = useState<TGameCard[]>();
+  const [gameList, setGameList] = useState<TDealGameCard[]>();
+  const [filteredList, setFilteredList] = useState<TDealGameCard[]>();
   const [searchValue, setSearchValue] = useState('');
   const [saleFilter, setSaleFilter] = useState(false);
 

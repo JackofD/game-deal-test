@@ -19,7 +19,7 @@ export const getDeals = async () => {
   });
 };
 
-export const getGameDetail = async (id: string) => {
+export const getDealDetail = async (id: string) => {
   const response = await fetch(baseDealApiUrl + `deals?id=${id}`);
   const result = await response.json();
 
@@ -49,4 +49,11 @@ export const getStores = async () => {
       isActive: store.isActive
     };
   });
+};
+
+export const getGameLookup = async (gameID: string) => {
+  const response = await fetch(baseDealApiUrl + `games?id=${gameID}`);
+  const result = await response.json();
+
+  return result.deals;
 };

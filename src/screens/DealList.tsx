@@ -29,7 +29,7 @@ const DealList = () => {
 
     useEffect(() => {
       if(saleFilter) {
-        const onSaleFilter = filteredList?.filter((game) => game.isOnSale);
+        const onSaleFilter = filteredList?.filter((game) => game.isOnSale === "1");
         setFilteredList(onSaleFilter);
       } else {
         setFilteredList(gameList?.filter(game => game.title.toLowerCase().includes(searchValue.toLowerCase())));

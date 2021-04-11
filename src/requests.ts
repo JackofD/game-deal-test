@@ -1,5 +1,3 @@
-import { TGameDetail } from "./types/GameTypes";
-
 const baseDealApiUrl = 'https://www.cheapshark.com/api/1.0/';
 
 export const getDeals = async () => {
@@ -46,7 +44,8 @@ export const getStores = async () => {
     return {
       storeID: store.storeID,
       storeName: store.storeName,
-      isActive: store.isActive
+      isActive: store.isActive,
+      images: store.images
     };
   });
 };

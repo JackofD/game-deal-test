@@ -13,6 +13,7 @@ const Header:FC = () => {
       <nav>
           <ul className="flex flex-row gap-8 text-xl">
             <li><NavLink to="/" exact activeClassName="text-green-500">Deals</NavLink></li>
+            {/* Games screen left out for time and lack of specification */}
             {/* <li><NavLink to="/games" activeClassName="text-green-500">Games</NavLink></li> */}
             <li><NavLink to="/stores" activeClassName="text-green-500">Stores</NavLink></li>
           </ul>

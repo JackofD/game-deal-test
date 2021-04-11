@@ -29,4 +29,5 @@ export type TStore = {
   storeID: string;
   storeName: string;
   isActive: string;
+  images: any;
 };

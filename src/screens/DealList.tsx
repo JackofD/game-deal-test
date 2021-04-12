@@ -22,8 +22,6 @@ const DealList = () => {
       if(!currentStoreId) {
         getDeals()
           .then(res => setGameList(res));
-
-        console.log('should not', currentStoreId)
       }
     }, [location]);
 
@@ -31,7 +29,6 @@ const DealList = () => {
       if(currentStoreId) {
         getDealsByStore(currentStoreId)
           .then(res => setGameList(res));
-          console.log('should', currentStoreId)
       }
     }, [location]);
 

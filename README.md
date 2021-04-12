@@ -28,6 +28,16 @@ yarn start
 
 Vist `localhost:3000` in your browser.
 
+4. To run tests use the `jest` script provided in the package.json file.
+```
+npm run jest
+
+or
+
+yarn jest
+```
+This will run all the tests in the project.
+
 
 ## Assumptions
 

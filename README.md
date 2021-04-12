@@ -17,7 +17,7 @@ Yarn
 ```
 to install all the dependencies of the project.
 
-3. Once that is done use your start script
+3. Once that is done, use your start script
 ```
 npm run start
 
@@ -26,7 +26,7 @@ or
 yarn start
 ```
 
-Vist `localhost:3000` in your browser.
+Visit `localhost:3000` in your browser.
 
 4. To run tests use the `jest` script provided in the package.json file.
 ```
@@ -42,7 +42,7 @@ This will run all the tests in the project.
 ## Assumptions
 
 - That the Api works correctly and will allow all requirements to be completed.
-- That the specification and design has been thought through as is feasible with the resources available.
+- That the specification and design has been thought through and is feasible with the resources available.
 - That the project is feasible.
 
 
